@@ -3,9 +3,9 @@ import { useState } from "react";
 import { genTicket, sum } from "./helper";
 
 
-export default function Lottery({n=3,winningSum=15}){
+export default function Lottery({n=3,winCondition}){
     let [ticket, setTicket] = useState(genTicket(n));
-    let isWinning = sum(ticket) === winningSum; // Example winning condition
+    let isWinning = winCondition(ticket); // Example winning condition
     return(
         <div>
             <h1>Lottery Game</h1>
