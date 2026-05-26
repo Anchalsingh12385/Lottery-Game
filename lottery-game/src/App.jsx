@@ -1,19 +1,17 @@
-import { useState } from 'react'
-import{ Lottery } from "./Lottery";
+import TicketNum from "./TicketNum";
+import Lottery  from "./Lottery";
+import './App.css';
+
+
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <>
-    < h1 >Lottery Game</h1>
-    <div className="ticket">
-        <span>{count}</span>
-        <span>{count}</span>
-        <span>{count}</span>
-    </div>
+     <TicketNum num={5} />
     
     </>
-  )
+  );
 }
 
-export default App
+export default App;
