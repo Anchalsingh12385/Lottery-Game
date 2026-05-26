@@ -8,8 +8,8 @@ function App() {
 
   return (
     <>
-     <TicketNum num={[0,1,2]} />
-    
+     <Lottery n={3} winningSum={15} />
+     
     
     </>
   );

@@ -1,9 +1,9 @@
 import { useState } from "react";
-import "./Lottery.css";
+
 import { genTicket, sum } from "./helper";
 
 
-export default function Lottery({n,winningSum}){
+export default function Lottery({n=3,winningSum=15}){
     let [ticket, setTicket] = useState(genTicket(n));
     let isWinning = sum(ticket) === winningSum; // Example winning condition
     return(
@@ -14,7 +14,7 @@ export default function Lottery({n,winningSum}){
                     <span key={index}>{num}</span>
                 ))}
             </div>
-            <button onClick={() => setTicket(genTicket(3))}>Generate Ticket</button>
+            <button onClick={() => setTicket(genTicket(n))}>Generate Ticket</button>
             {isWinning && <p>Congratulations! You won!</p>}
         </div>
     );
